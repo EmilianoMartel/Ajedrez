@@ -38,28 +38,10 @@ public  class Chessman : MonoBehaviour
 
     public void Activate()
     {
-        controller = GameObject.FindGameObjectWithTag("GameController");
-
-        pice.Foo();
+        controller = GameObject.FindGameObjectWithTag("GameController");     
 
         SetCoords();
 
-        switch (this.name)
-        {
-            case "black_queen": this.GetComponent<SpriteRenderer>().sprite = black_queen; player = "black"; break;
-            case "black_knight": this.GetComponent<SpriteRenderer>().sprite = black_knight; player = "black"; break;
-            case "black_bishop": this.GetComponent<SpriteRenderer>().sprite = black_bishop; player = "black"; break;
-            case "black_king": this.GetComponent<SpriteRenderer>().sprite = black_king; player = "black"; break;
-            case "black_rook": this.GetComponent<SpriteRenderer>().sprite = black_rook; player = "black"; break;
-            case "black_pawn": this.GetComponent<SpriteRenderer>().sprite = black_pawn; player = "black"; break;
-
-            case "white_queen": this.GetComponent<SpriteRenderer>().sprite = white_queen; player = "white"; break;
-            case "white_knight": this.GetComponent<SpriteRenderer>().sprite = white_knight; player = "white"; break;
-            case "white_bishop": this.GetComponent<SpriteRenderer>().sprite = white_bishop; player = "white"; break;
-            case "white_king": this.GetComponent<SpriteRenderer>().sprite = white_king; player = "white"; break;
-            case "white_rook": this.GetComponent<SpriteRenderer>().sprite = white_rook; player = "white"; break;
-            case "white_pawn": this.GetComponent<SpriteRenderer>().sprite = white_pawn; player = "white"; break;
-        }
     }
 
     public void SetCoords()

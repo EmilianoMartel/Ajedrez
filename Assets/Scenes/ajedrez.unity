@@ -413,11 +413,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 241393139001854678, guid: 4479b4c7320ffae4da7ab4cb406e990e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 398
+      value: 418
       objectReference: {fileID: 0}
     - target: {fileID: 241393139001854678, guid: 4479b4c7320ffae4da7ab4cb406e990e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 140.77
+      value: 142
       objectReference: {fileID: 0}
     - target: {fileID: 5724395906317122502, guid: 4479b4c7320ffae4da7ab4cb406e990e, type: 3}
       propertyPath: m_Name

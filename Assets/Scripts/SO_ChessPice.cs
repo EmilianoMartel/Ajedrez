@@ -22,9 +22,9 @@ public class SO_ChessPice : ScriptableObject
 {
     public PiceType piceType;
     public Sprite sprite;
-    public void Foo()
+    
+    public string GetName()
     {
-        Debug.Log("patata");
+        return piceType.ToString();
     }
-
 }
