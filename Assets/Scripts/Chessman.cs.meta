@@ -3,7 +3,33 @@ guid: 6ea93522d861063458a2083b73500886
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - blackBishop: {fileID: 11400000, guid: 0f806079eb598cb4e84b9291a4932d83, type: 2}
+  - blackKing: {fileID: 11400000, guid: 1f0e32daedc6a9f4bb23c81c5e0f17e3, type: 2}
+  - blackKnight: {fileID: 11400000, guid: 8f12eece825869845b1135b4f30729a7, type: 2}
+  - blackPawn: {fileID: 11400000, guid: c60e40ba20f72f74dbd484194a27f7ae, type: 2}
+  - blackQueen: {fileID: 11400000, guid: 8ac3e5f1657f03640887c91951fc5523, type: 2}
+  - blackRook: {fileID: 11400000, guid: 524b6f8c61747a842a26b4e58d7d360e, type: 2}
+  - whiteBishop: {fileID: 11400000, guid: d4bd58c87ed55824289e29413cc6b55c, type: 2}
+  - whiteKing: {fileID: 11400000, guid: d676860a91ca8444191add4505deb7c3, type: 2}
+  - whiteKnight: {fileID: 11400000, guid: ed5e33a71557b2d4d9ac467b2aa84a67, type: 2}
+  - whitePawn: {fileID: 11400000, guid: 319bacac44630bd4f83cc2c939f9dd19, type: 2}
+  - whiteQueen: {fileID: 11400000, guid: dc9dbe010d9b6b944b0abb45585b18c2, type: 2}
+  - whiteRook: {fileID: 11400000, guid: 04d19006122c55649a7075c680f4be1f, type: 2}
+  - controller: {instanceID: 0}
+  - movePlate: {instanceID: 0}
+  - black_queen: {instanceID: 0}
+  - black_knight: {instanceID: 0}
+  - black_bishop: {instanceID: 0}
+  - black_king: {instanceID: 0}
+  - black_rook: {instanceID: 0}
+  - black_pawn: {instanceID: 0}
+  - white_queen: {instanceID: 0}
+  - white_knight: {instanceID: 0}
+  - white_bishop: {instanceID: 0}
+  - white_king: {instanceID: 0}
+  - white_rook: {instanceID: 0}
+  - white_pawn: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

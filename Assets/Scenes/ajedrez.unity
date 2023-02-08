@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chesspiece: {fileID: 8089295145584985239, guid: 4c2241a50ba8b29479150218a6aef63b, type: 3}
+  piceType: 0
 --- !u!1 &73568537
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,6 +420,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 142
       objectReference: {fileID: 0}
+    - target: {fileID: 3617425484383436129, guid: 4479b4c7320ffae4da7ab4cb406e990e, type: 3}
+      propertyPath: m_Name
+      value: WhiteText
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240329571537853603, guid: 4479b4c7320ffae4da7ab4cb406e990e, type: 3}
+      propertyPath: m_Name
+      value: BlackText
+      objectReference: {fileID: 0}
     - target: {fileID: 5724395906317122502, guid: 4479b4c7320ffae4da7ab4cb406e990e, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -427,6 +436,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 73568539}
+    - target: {fileID: 5834623149451191460, guid: 4479b4c7320ffae4da7ab4cb406e990e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996860607810951218, guid: 4479b4c7320ffae4da7ab4cb406e990e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9179239873660078732, guid: 4479b4c7320ffae4da7ab4cb406e990e, type: 3}
       propertyPath: m_SizeDelta.x
       value: 286.45

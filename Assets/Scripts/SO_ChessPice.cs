@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+//esto lo hacemos para tener las piezas divididas
+
 public enum PiceType
 {
     BlackQueen,
@@ -25,6 +28,7 @@ public class SO_ChessPice : ScriptableObject
     
     public string GetName()
     {
-        return piceType.ToString();
+        return name=piceType.ToString();
     }
+
 }

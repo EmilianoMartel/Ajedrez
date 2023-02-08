@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -6,9 +8,10 @@ public class Game : MonoBehaviour
 {
     public GameObject chesspiece;
 
-    
-
     public PiceType piceType;
+
+    public Text whiteText;
+    public Text blackText;
 
     //posiciones
     private GameObject[,] positions = new GameObject[8, 8];
@@ -21,26 +24,27 @@ public class Game : MonoBehaviour
 
     // Start is called before the first frame update
     public void Start()
-    {
-        playerWhite = new GameObject[]{
-       //     Create(pice.GetName(),0,0), Create("white_knight",1,0), Create("white_bishop",2,0), Create("white_queen",3,0),
-            Create("white_king",4,0), Create("white_bishop",5,0), Create("white_knight",6,0), Create("white_rook",7,0),
-            Create("white_pawn",0,1), Create("white_pawn",1,1), Create("white_pawn",2,1), Create("white_pawn",3,1),
-            Create("white_pawn",4,1), Create("white_pawn",5,1), Create("white_pawn",6,1), Create("white_pawn",7,1),
-        };
-        playerBlack = new GameObject[]{
-            Create("black_rook",0,7), Create("black_knight",1,7), Create("black_bishop",2,7), Create("black_queen",3,7),
-            Create("black_king",4,7), Create("black_bishop",5,7), Create("black_knight",6,7), Create("black_rook",7,7),
-            Create("black_pawn",4,6), Create("black_pawn",5,6), Create("black_pawn",6,6), Create("black_pawn",7,6),
-            Create("black_pawn",0,6), Create("black_pawn",1,6), Create("black_pawn",2,6), Create("black_pawn",3,6),
-        };
-
-        //set la posicion de las piezas y el tablero
-        for (int i = 0; i < playerBlack.Length; i++)
-        {
-            SetPosition(playerBlack[i]);
-            SetPosition(playerWhite[i]);
-        }        
+    {        
+       playerWhite = new GameObject[]{
+           Create("white_rook1",0,0), Create("white_knight",1,0), Create("white_bishop",2,0), Create("white_queen",3,0),
+           Create("white_king",4,0), Create("white_bishop",5,0), Create("white_knight",6,0), Create("white_rook2",7,0),
+           Create("white_pawn",0,1), Create("white_pawn",1,1), Create("white_pawn",2,1), Create("white_pawn",3,1),
+           Create("white_pawn",4,1), Create("white_pawn",5,1), Create("white_pawn",6,1), Create("white_pawn",7,1),
+       };
+       playerBlack = new GameObject[]{
+           Create("black_rook1",0,7), Create("black_knight",1,7), Create("black_bishop",2,7), Create("black_queen",3,7),
+           Create("black_king",4,7), Create("black_bishop",5,7), Create("black_knight",6,7), Create("black_rook2",7,7),
+           Create("black_pawn",4,6), Create("black_pawn",5,6), Create("black_pawn",6,6), Create("black_pawn",7,6),
+           Create("black_pawn",0,6), Create("black_pawn",1,6), Create("black_pawn",2,6), Create("black_pawn",3,6),
+       };
+    
+     //set la posicion de las piezas y el tablero
+       for (int i = 0; i < playerBlack.Length; i++)
+       {
+           SetPosition(playerBlack[i]);
+           SetPosition(playerWhite[i]);
+       }
+               
     }
 
     public GameObject Create(string name, int x, int y)
@@ -52,12 +56,13 @@ public class Game : MonoBehaviour
         cm.SetYBoard(y);
         cm.Activate();
         return obj;
+        
     }
-
+   
     public void SetPosition(GameObject obj)
     {
         Chessman cm = obj.GetComponent<Chessman>();
-
+   
         positions[cm.GetXBoard(), cm.GetYBoard()] = obj;
     }
 
@@ -100,8 +105,8 @@ public class Game : MonoBehaviour
     }
 
     public void Update()
-    {
-        if(gameOver == true && Input.GetMouseButtonDown(0) )
+    {        
+        if (gameOver == true && Input.GetMouseButtonDown(0) )
         {
             gameOver = false;
 
@@ -109,20 +114,21 @@ public class Game : MonoBehaviour
         }
     }
 
-    public void Winner(string playerWinner)
+    public void Winner(string playerWinner, string playerLoser)
     {
         gameOver = true;
-
-      //  if (playerWinner == "white")
-      //  {
-      //      GameObject.FindGameObjectsWithTag("WhitePlayer").GetComponent<Text>().text = playerWinner + "is the Winner.";
-      //      GameObject.FindGameObjectsWithTag("BlackPlayer").GetComponent<Text>().text = "Black player lose.";
-      //  }
-      //  if(playerWinner == "black")
-      //  {
-      //      GameObject.FindGameObjectsWithTag("BlackPlayer").GetComponent<Text>().text = playerWinner + "is the Winner.";
-      //      GameObject.FindGameObjectsWithTag("WhitePlayer").GetComponent<Text>().text = "White player lose.";
-      //  }
+       
+       if (playerWinner == "white")
+       {
+            whiteText.text = playerWinner + "is the Winner";
+            blackText.text = playerLoser + "is the Loser";           
+       }
+       if(playerWinner == "black")
+       {
+            whiteText.text = playerLoser + "is the Loser";
+            blackText.text = playerWinner + "is the Winner";
+        }
          
     }
+        
 }
