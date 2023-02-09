@@ -36,6 +36,7 @@ public  class Chessman : MonoBehaviour
     private bool castling_s_black = false;
     private bool castling_s_white = false;
     public bool moved = false;
+    public string movimiento;
 
 
     //referencias para todos los sprites
@@ -199,6 +200,7 @@ public  class Chessman : MonoBehaviour
 
     public void LineMovePlate(int xIncrement, int yIncrement)
     {
+        movimiento = "normal";
         Game sc = controller.GetComponent<Game>();
 
         int x = xBoard + xIncrement;
@@ -219,6 +221,7 @@ public  class Chessman : MonoBehaviour
 
     public void LMovePlate()
     {
+        movimiento = "normal";
         PointMovePlate(xBoard + 1, yBoard + 2);
         PointMovePlate(xBoard - 1, yBoard + 2);
         PointMovePlate(xBoard + 2, yBoard + 1);
@@ -231,6 +234,7 @@ public  class Chessman : MonoBehaviour
 
     public void SurroundMovePlate()
     {
+        movimiento = "normal";
         PointMovePlate(xBoard, yBoard + 1);
         PointMovePlate(xBoard, yBoard - 1);
         PointMovePlate(xBoard - 1, yBoard - 1);
@@ -300,6 +304,7 @@ public  class Chessman : MonoBehaviour
         mpScript.SetReference(gameObject);
         mpScript.SetCoords(matrixX, matrixY);
 
+
     }
 
     public void MovePlateAttackSpawn(int matrixX, int matrixY)
@@ -332,6 +337,7 @@ public  class Chessman : MonoBehaviour
             && GameObject.Find("black_rook1").GetComponent<Chessman>().moved == false 
             && sc.GetPosition(1,7) == null && sc.GetPosition(2, 7) == null && sc.GetPosition(3, 7) == null)
         {
+            movimiento = "castling_large";
             GameObject.Find("black_king").GetComponent<Chessman>().MovePlateSpawn(2,7);
             GameObject.Find("black_rook1").GetComponent<Chessman>().MovePlateSpawn(3,7);
         //    ASI HACEMOS QUE SE MUEVE
